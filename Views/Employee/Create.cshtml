@@ -1,0 +1,14 @@
+@model BuiTrungQuyetBTH2.Models.Employee;
+
+@{
+    string id = @Guid.NewGuid().ToString("N");
+}
+
+<form asp-action="Create" method="post" class="col-6">
+    <input type="hidden" value="@id" asp-for="EmployeeID">
+    <div class=""mp-3>
+        <label for="std-name" class="form-label">Employee Name</label>
+        <input type="text" class="form-control" id="std-name" asp-for="EmployeeName"></input>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
