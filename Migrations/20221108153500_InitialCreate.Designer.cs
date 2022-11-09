@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BuiTrungQuyetBTH2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221009160455_Create_Employee_Table")]
-    partial class Create_Employee_Table
+    [Migration("20221108153500_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,14 +20,18 @@ namespace BuiTrungQuyetBTH2.Migrations
 
             modelBuilder.Entity("BuiTrungQuyetBTH2.Models.Employee", b =>
                 {
-                    b.Property<string>("EmployeeID")
+                    b.Property<string>("EmpID")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("EmployeeName")
+                    b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("EmployeeID");
+                    b.Property<string>("EmpName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("EmpID");
 
                     b.ToTable("Employees");
                 });

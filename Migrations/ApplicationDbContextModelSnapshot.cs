@@ -18,14 +18,18 @@ namespace BuiTrungQuyetBTH2.Migrations
 
             modelBuilder.Entity("BuiTrungQuyetBTH2.Models.Employee", b =>
                 {
-                    b.Property<string>("EmployeeID")
+                    b.Property<string>("EmpID")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("EmployeeName")
+                    b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("EmployeeID");
+                    b.Property<string>("EmpName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("EmpID");
 
                     b.ToTable("Employees");
                 });
